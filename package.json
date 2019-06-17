@@ -1,7 +1,7 @@
 {
   "name": "alto-command",
   "description": "alto-clif base command",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "oclif-version": "1.5.14",
   "author": "柏大衛",
   "oclif-author": "Jeff Dickey @jdxcode",

@@ -1,6 +1,9 @@
 alto-command
 ===============
+[![Version](https://img.shields.io/npm/v/alto-command.svg)](https://npmjs.org/package/alto-command)
+[![License](https://img.shields.io/npm/l/alto-command.svg)](https://github.com/bodawei/alto-command/blob/master/package.json)
 
+### About
 This is a fork of [@oclif/command](https://github.com/oclif/command).
 The reason for this fork is to change this to allow space-separated subcommands rather than
 the heroku-style colon delimited.  This is a minimal change, which should allow this to be
