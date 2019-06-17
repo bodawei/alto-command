@@ -6,27 +6,27 @@
   "bugs": "https://github.com/oclif/command/issues",
   "dependencies": {
     "@oclif/errors": "^1.2.2",
-    "@oclif/parser": "^3.7.3",
+    "@oclif/parser": "3.8.1",
     "debug": "^4.1.1",
     "semver": "^5.6.0"
   },
   "devDependencies": {
-    "@oclif/config": "^1.12.10",
-    "@oclif/plugin-help": "^2.1.6",
-    "@oclif/plugin-plugins": "^1.7.7",
+    "@oclif/config": "1.13.0",
+    "@oclif/plugin-help": "2.2.0",
+    "@oclif/plugin-plugins": "1.7.8",
     "@oclif/tslint": "^3.1.1",
     "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.6",
+    "@types/mocha": "5.2.7",
     "@types/node": "^10.12.24",
     "@types/semver": "^5.5.0",
     "chai": "^4.2.0",
     "cli-ux": "^5.1.0",
-    "conventional-changelog-cli": "^2.0.12",
+    "conventional-changelog-cli": "2.0.21",
     "fancy-test": "^1.4.3",
     "globby": "^9.0.0",
-    "mocha": "^6.0.2",
+    "mocha": "6.1.4",
     "ts-node": "^8.0.3",
-    "tslint": "^5.14.0",
+    "tslint": "5.17.0",
     "typescript": "^3.3.3333"
   },
   "engines": {
@@ -57,5 +57,11 @@
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "resolutions-notes": {
+    "info": "overriding handlebars since conventional-changelog-cli > conventional-changelog > conventional-changelog-core > conventional-changelog-writer > handlebars hasn't been updated yet"
+  },
+  "resolutions": {
+    "handlebars": "4.1.2"
+  }
 }
