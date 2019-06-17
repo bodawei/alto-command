@@ -8,6 +8,41 @@ export class Main extends Command {
     return super.run(argv, options || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
   }
 
+  /*
+   * Override the parent class' _run() routine so we can conert from a space-delimited
+   * set of subcommands to the heroku-style colon delimited style. This allows the overall
+   * machinery to keep working with the colon-separated style.
+   */
+  async _run<T>(): Promise<T | undefined> {
+    let herokuizedCommandId: string = '';
+    let argsConsumed = 0;
+    // Loop the argv array (subcommand + flags + other args), concatenating each
+    // successive argument into a colon-separated string, and then check if it
+    // matches a command (e.g. foo:bar:baz:doit). If so, success, otherwise,
+    // check if it matches a "topic" (the foo:bar:baz portion of the previous)
+    // example. If it does, then we're possibly heading towards command match.
+    for (let index = 0; index < this.argv.length; index ++) {
+      const arg = this.argv[index];
+      const divider = index === 0 ? '' : ':';
+      herokuizedCommandId += `${divider}${arg}`;
+      let matchingCommand = this.config.findCommand(herokuizedCommandId);
+      const topic = this.config.findTopic(herokuizedCommandId)
+      if (matchingCommand) {
+        argsConsumed ++;
+        break;
+      }
+      if (!topic) {
+        break;
+      }
+      argsConsumed ++;
+    }
+    // Replace the portion of argv that was turned into a colon-separated
+    // id with that id, then yield to the superclass.  It won't ever know
+    // the user typed in spaces.
+    this.argv.splice(0, argsConsumed, herokuizedCommandId)
+    return super._run();
+  }
+
   async init() {
     let [id, ...argv] = this.argv
     await this.config.runHook('init', {id, argv})

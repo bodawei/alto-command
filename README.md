@@ -1,5 +1,43 @@
-@oclif/command
+alto-command
 ===============
+
+This is a fork of [@oclif/command](https://github.com/oclif/command).
+The reason for this fork is to change this to allow space-separated subcommands rather than
+the heroku-style colon delimited.  This is a minimal change, which should allow this to be
+used with the rest of the `@oclif/*` system.
+
+Note that this accepts both the heroku style and the space-delimited style at the moment.
+
+### Notes/Next steps
+* This hasn't been particularly heavily tested, at this moment.
+* Other parts of the `@oclif/*` system will need to be alto-ized (e.g. the help plugin)
+* Would like to set up a "heroku" flag in the package hosting this one, and let that drive whether this does or does not accept colons.
+
+### Warning
+
+Consider this situation. You have a command like this:
+  ```
+  mycmd topic1 topic2 cmd arg  # that is, in heroku-land mycmd topic1:topic2:cmd arg
+  ```
+imagine you mis-type this:
+  ```
+  mycmd topic1 topic2 arg
+  ```
+and your arg happens to have the value "cmd". Then this will execute the command when you
+might have expected an error (this is hardly a surprise in the land of command line interfaces
+where many things like this can happy, but worth pointing out as a "failure mode" to be aware of)
+
+### Name explanation
+This is an alternate oclif, which is to say: "alt-oclif", which is to say "alto-clif".
+
+### Thanks
+
+Thanks to the [`@oclif` team and contributors](https://github.com/oclif/command/graphs/contributors).
+There are are lot of great ideas in oclif! Without them, of course, this package wouldn't exist!
+
+Original README info, below
+===============
+
 
 oclif base command
 
