@@ -1,5 +1,5 @@
 import * as Config from '@oclif/config'
-import Help from '@oclif/plugin-help'
+import Help from 'alto-plugin-help'
 
 import {Command} from '.'
 
@@ -14,35 +14,37 @@ export class Main extends Command {
    * machinery to keep working with the colon-separated style.
    */
   async _run<T>(): Promise<T | undefined> {
-    let herokuizedCommandId: string = '';
-    let argsConsumed = 0;
+    let herokuizedCommandId = ''
+    let argsConsumed = 0
     // Loop the argv array (subcommand + flags + other args), concatenating each
     // successive argument into a colon-separated string, and then check if it
     // matches a command (e.g. foo:bar:baz:doit). If so, success, otherwise,
     // check if it matches a "topic" (the foo:bar:baz portion of the previous)
     // example. If it does, then we're possibly heading towards command match.
     for (let index = 0; index < this.argv.length; index ++) {
-      const arg = this.argv[index];
-      const divider = index === 0 ? '' : ':';
-      const candidate = `${herokuizedCommandId}${divider}${arg}`;
-      let matchingCommand = this.config.findCommand(candidate);
-      const topic = this.config.findTopic(candidate);
-      argsConsumed++;
+      const arg = this.argv[index]
+      const divider = index === 0 ? '' : ':'
+      const candidate = `${herokuizedCommandId}${divider}${arg}`
+      let matchingCommand = this.config.findCommand(candidate)
+      const topic = this.config.findTopic(candidate)
+      argsConsumed++
       if (matchingCommand) {
-          herokuizedCommandId = candidate;
-          break;
+        herokuizedCommandId = candidate
+        break
       }
       if (!topic) {
-        argsConsumed--;
-        break;
+        argsConsumed--
+        break
       }
-      herokuizedCommandId = candidate;
+      herokuizedCommandId = candidate
     }
     // Replace the portion of argv that was turned into a colon-separated
     // id with that id, then yield to the superclass.  It won't ever know
     // the user typed in spaces.
-    this.argv.splice(0, argsConsumed, herokuizedCommandId)
-    return super._run();
+    if (argsConsumed > 0) {
+      this.argv.splice(0, argsConsumed, herokuizedCommandId)
+    }
+    return super._run()
   }
 
   async init() {
@@ -73,7 +75,7 @@ export class Main extends Command {
   }
 
   protected _help() {
-    const HHelp: typeof Help = require('@oclif/plugin-help').default
+    const HHelp: typeof Help = require('alto-plugin-help').default
     const help = new HHelp(this.config)
     help.showHelp(this.argv)
     return this.exit(0)
