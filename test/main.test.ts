@@ -3,7 +3,7 @@ import {expect, fancy} from 'fancy-test'
 import {Main} from '../src/main'
 
 const pjson = require('../package.json')
-const version = `@oclif/command/${pjson.version} ${process.platform}-${process.arch} node-${process.version}`
+const version = `alto-command/${pjson.version} ${process.platform}-${process.arch} node-${process.version}`
 
 describe('main', () => {
   fancy
@@ -23,16 +23,16 @@ describe('main', () => {
     .stdout()
     .do(() => Main.run(['-h']))
     .catch('EEXIT: 0')
-    .do(output => expect(output.stdout).to.equal(`oclif base command
+    .do(output => expect(output.stdout).to.equal(`alto-clif base command
 
 VERSION
   ${version}
 
 USAGE
-  $ @oclif/command [COMMAND]
+  $ alto-command [COMMAND]
 
 COMMANDS
-  help     display help for @oclif/command
+  help     display help for alto-command
   plugins  list installed plugins
 
 `))

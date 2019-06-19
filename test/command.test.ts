@@ -243,7 +243,7 @@ describe('command', () => {
         expect(ctx.stdout).to.equal(`test command
 
 USAGE
-  $ @oclif/command
+  $ alto-command
 
 OPTIONS
   --help  show CLI help
@@ -263,7 +263,7 @@ OPTIONS
         expect(ctx.stdout).to.equal(`test command
 
 USAGE
-  $ @oclif/command
+  $ alto-command
 
 `)
       })
