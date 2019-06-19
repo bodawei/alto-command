@@ -24,17 +24,19 @@ export class Main extends Command {
     for (let index = 0; index < this.argv.length; index ++) {
       const arg = this.argv[index];
       const divider = index === 0 ? '' : ':';
-      herokuizedCommandId += `${divider}${arg}`;
-      let matchingCommand = this.config.findCommand(herokuizedCommandId);
-      const topic = this.config.findTopic(herokuizedCommandId)
+      const candidate = `${herokuizedCommandId}${divider}${arg}`;
+      let matchingCommand = this.config.findCommand(candidate);
+      const topic = this.config.findTopic(candidate);
+      argsConsumed++;
       if (matchingCommand) {
-        argsConsumed ++;
-        break;
+          herokuizedCommandId = candidate;
+          break;
       }
       if (!topic) {
+        argsConsumed--;
         break;
       }
-      argsConsumed ++;
+      herokuizedCommandId = candidate;
     }
     // Replace the portion of argv that was turned into a colon-separated
     // id with that id, then yield to the superclass.  It won't ever know
