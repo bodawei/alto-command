@@ -13,7 +13,7 @@ Note that this accepts both the heroku style and the space-delimited style at th
 
 ### Notes/Next steps
 * This hasn't been particularly heavily tested, at this moment.
-* Other parts of the `@oclif/*` system will need to be alto-ized (e.g. the help plugin)
+* Other parts of the `@oclif/*` system may need to be alto-ized
 * Would like to set up a "heroku" flag in the package hosting this one, and let that drive whether this does or does not accept colons.
 
 ### Warning
