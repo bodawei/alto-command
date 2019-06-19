@@ -69,7 +69,7 @@
     debug "^4.1.0"
     semver "^5.6.0"
 
-"@oclif/command@^1.5.12", "@oclif/command@^1.5.13":
+"@oclif/command@^1.5.12":
   version "1.5.14"
   resolved "https://registry.yarnpkg.com/@oclif/command/-/command-1.5.14.tgz#cdf6013134abfb5630783f27e78436096ce3ed88"
   integrity sha512-R9gat0yUjamDVd4trvFgjlx2XYuMz1nM0uEBFP6nR1zOQAwJ3E1zqYbsVlCMWiUDGjU1hYmudmK7IjAxDUoqDw==
@@ -120,20 +120,6 @@
     "@oclif/linewrap" "^1.0.0"
     chalk "^2.4.1"
     tslib "^1.9.3"
-
-"@oclif/plugin-help@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-2.2.0.tgz#8dfc1c80deae47a205fbc70b018747ba93f31cc3"
-  integrity sha512-56iIgE7NQfwy/ZrWrvrEfJGb5rrMUt409yoQGw4feiU101UudA1btN1pbUbcKBr7vY9KFeqZZcftXEGxOp7zBg==
-  dependencies:
-    "@oclif/command" "^1.5.13"
-    chalk "^2.4.1"
-    indent-string "^3.2.0"
-    lodash.template "^4.4.0"
-    string-width "^3.0.0"
-    strip-ansi "^5.0.0"
-    widest-line "^2.0.1"
-    wrap-ansi "^4.0.0"
 
 "@oclif/plugin-plugins@1.7.8":
   version "1.7.8"
@@ -220,6 +206,30 @@ add-stream@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/add-stream/-/add-stream-1.0.0.tgz#6a7990437ca736d5e1288db92bd3266d5f5cb2aa"
   integrity sha1-anmQQ3ynNtXhKI25K9MmbV9csqo=
+
+alto-command@^0:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/alto-command/-/alto-command-0.9.1.tgz#e72e1adc4390b35f8f3f0d9b72b2ab4a74eceb24"
+  integrity sha512-1Xb+erk9iwbnrQ9io54cZ+Mb+eW1ppb5XYiQ98nrcyltsA+qfG2Z5kuGzAavYEEd8K01bhKt/ZDlS+AURMm3fQ==
+  dependencies:
+    "@oclif/errors" "^1.2.2"
+    "@oclif/parser" "3.8.1"
+    debug "^4.1.1"
+    semver "^5.6.0"
+
+alto-plugin-help@^0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/alto-plugin-help/-/alto-plugin-help-0.9.0.tgz#9c3107d2b2847f5abd5f73508cf79661cc994933"
+  integrity sha512-GY7ahdYXEbPsKvlOkuFWRH7A4CsKl2HXhD+g0moa3+nyDlzm5eFzIs4JkKK3llLjhhNLftDpWXbi6ifo/vVurQ==
+  dependencies:
+    alto-command "^0"
+    chalk "^2.4.1"
+    indent-string "^3.2.0"
+    lodash.template "^4.4.0"
+    string-width "^3.0.0"
+    strip-ansi "^5.0.0"
+    widest-line "^2.0.1"
+    wrap-ansi "^4.0.0"
 
 ansi-colors@3.2.3:
   version "3.2.3"
