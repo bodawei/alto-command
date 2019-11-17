@@ -1,9 +1,20 @@
 # alto-clif
+## 0.9.7: Upgrade to @oclif/command@1.5.19
+
 ## 0.9.6: Upgrade to @oclif/command@1.5.18
 
 ## 0.9.5: Upgrade to @oclif/command@1.5.16
 
 # Oclif
+## [1.5.19](https://github.com/oclif/command/compare/v1.5.18...v1.5.19) (2019-09-05)
+
+
+### Bug Fixes
+
+* `default` should be `T[]` when `multiple: true` ([#70](https://github.com/oclif/command/issues/70)) ([13da51c](https://github.com/oclif/command/commit/13da51c))
+
+
+
 ## [1.5.18](https://github.com/oclif/command/compare/v1.5.17...v1.5.18) (2019-07-22)
 
 
