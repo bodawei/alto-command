@@ -3,7 +3,7 @@ import {expect, fancy} from 'fancy-test'
 
 import Base, {flags} from '../src'
 import {TestHelpClassConfig} from './helpers/test-help-in-src/src/test-help-plugin'
-import * as PluginHelp from '@oclif/plugin-help'
+import * as PluginHelp from 'alto-plugin-help'
 
 const originalgetHelpClass = PluginHelp.getHelpClass
 

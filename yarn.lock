@@ -356,13 +356,14 @@ alto-command@^0:
     semver "^5.6.0"
 
 alto-plugin-help@^0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/alto-plugin-help/-/alto-plugin-help-0.9.0.tgz#9c3107d2b2847f5abd5f73508cf79661cc994933"
-  integrity sha512-GY7ahdYXEbPsKvlOkuFWRH7A4CsKl2HXhD+g0moa3+nyDlzm5eFzIs4JkKK3llLjhhNLftDpWXbi6ifo/vVurQ==
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/alto-plugin-help/-/alto-plugin-help-0.9.3.tgz#63cb164bc12534bcb311236fbe5391fc57a90b36"
+  integrity sha512-2p3AVJQ/Q9dDzWrAq4iPL6o5KRJ/6URNfWlknph3QzMhBy9fFhvTiFKZckl3esgx5t+H6p8CNaYZkCqudDIKdQ==
   dependencies:
+    "@oclif/config" "^1.15.1"
     alto-command "^0"
     chalk "^2.4.1"
-    indent-string "^3.2.0"
+    indent-string "^4.0.0"
     lodash.template "^4.4.0"
     string-width "^3.0.0"
     strip-ansi "^5.0.0"
