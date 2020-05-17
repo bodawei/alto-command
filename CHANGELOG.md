@@ -1,4 +1,6 @@
 # alto-clif
+## 0.9.8: Upgrade to @oclif/command@1.5.20
+
 ## 0.9.7: Upgrade to @oclif/command@1.5.19
 
 ## 0.9.6: Upgrade to @oclif/command@1.5.18
@@ -6,6 +8,10 @@
 ## 0.9.5: Upgrade to @oclif/command@1.5.16
 
 # Oclif
+## [1.5.20](https://github.com/oclif/command/compare/v1.5.19...v1.5.20) (2020-04-20)
+
+
+
 ## [1.5.19](https://github.com/oclif/command/compare/v1.5.18...v1.5.19) (2019-09-05)
 
 
