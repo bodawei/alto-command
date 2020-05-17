@@ -2,11 +2,12 @@ const pjson = require('../package.json')
 import * as Config from '@oclif/config'
 import * as Errors from '@oclif/errors'
 import * as Parser from '@oclif/parser'
-import Help from 'alto-plugin-help'
+import {HelpBase} from 'alto-plugin-help'
 import {format, inspect} from 'util'
 
 import * as flags from './flags'
 import {sortBy, uniqBy} from './util'
+import {getHelpClass} from 'alto-plugin-help'
 
 /**
  * swallows stdout epipe errors
@@ -58,7 +59,7 @@ export default abstract class Command {
   static flags?: flags.Input<any>
 
   /** An order-dependent array of arguments for the command */
-  static args?: Parser.args.IArg[]
+  static args?: Parser.args.Input
 
   static plugin: Config.IPlugin | undefined
 
@@ -186,8 +187,8 @@ export default abstract class Command {
   }
 
   protected _help() {
-    const HHelp: typeof Help = require('alto-plugin-help').default
-    const help = new HHelp(this.config)
+    const HelpClass = getHelpClass(this.config)
+    const help: HelpBase = new HelpClass(this.config)
     const cmd = Config.Command.toCached(this.ctor as any as Config.Command.Class)
     if (!cmd.id) cmd.id = ''
     let topics = this.config.topics
