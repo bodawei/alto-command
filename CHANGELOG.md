@@ -1,4 +1,6 @@
 # alto-clif
+## 0.9.9: Upgrade to @oclif/command@1.6.1
+
 ## 0.9.8: Upgrade to @oclif/command@1.5.20
 
 ## 0.9.7: Upgrade to @oclif/command@1.5.19
@@ -8,6 +10,24 @@
 ## 0.9.5: Upgrade to @oclif/command@1.5.16
 
 # Oclif
+## [1.6.1](https://github.com/oclif/command/compare/v1.6.0...v1.6.1) (2020-05-05)
+
+
+### Bug Fixes
+
+* use args.Input to accept any type args ([#89](https://github.com/oclif/command/issues/89)) ([baf3576](https://github.com/oclif/command/commit/baf3576))
+
+
+
+# [1.6.0](https://github.com/oclif/command/compare/v1.5.20...v1.6.0) (2020-05-01)
+
+
+### Features
+
+* add loading for alternative help classes ([#85](https://github.com/oclif/command/issues/85)) ([136e7d4](https://github.com/oclif/command/commit/136e7d4))
+
+
+
 ## [1.5.20](https://github.com/oclif/command/compare/v1.5.19...v1.5.20) (2020-04-20)
 
 

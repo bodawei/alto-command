@@ -2,14 +2,14 @@
   "name": "alto-command",
   "description": "alto-clif base command",
   "version": "0.9.8",
-  "oclif-version": "1.5.20",
+  "oclif-version": "1.6.1",
   "author": "柏大衛",
   "oclif-author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/bodawei/alto-command/issues",
   "dependencies": {
-    "@oclif/config": "^1",
+    "@oclif/config": "^1.15.1",
     "@oclif/errors": "^1.2.2",
-    "@oclif/parser": "3.8.3",
+    "@oclif/parser": "^3.8.3",
     "alto-plugin-help": "^0",
     "debug": "^4.1.1",
     "semver": "^5.6.0"
@@ -29,9 +29,10 @@
     "eslint-config-oclif-typescript": "^0.1.0",
     "fancy-test": "^1.4.3",
     "globby": "^9.0.0",
-    "mocha": "6.1.4",
-    "ts-node": "^8.0.3",
-    "typescript": "^3.3.3333"
+    "mocha": "^6.0.2",
+    "sinon": "^9.0.1",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.8.3"
   },
   "peerDependencies": {
     "@oclif/config": "^1",
@@ -67,7 +68,6 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "pretest": "tsc -p test --noEmit"
   },
-  "types": "lib/index.d.ts",
   "resolutions-notes": {
     "info": "overriding handlebars since conventional-changelog-cli > conventional-changelog > conventional-changelog-core > conventional-changelog-writer > handlebars hasn't been updated yet"
   },
